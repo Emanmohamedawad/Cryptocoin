@@ -10,16 +10,16 @@ const Coin = () => {
     const [coin ,setCoin] = useState({})
     
 
-    const urlApicoin = `https://api.coingecko.com/api/v3/coins/${params.coinId}`
+    const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}`
 
 
     useEffect(() => {
-        axios.get(urlApicoin).then((res) => {
+        axios.get(url).then((res) => {
             setCoin(res.data)
         }).catch((error) => {
             console.log(error)
         })
-    }, [])
+    }, [])  // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className='coin-container'>
